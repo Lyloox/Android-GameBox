@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">The Game Box</string>
+    <string name="player_name">Player name : </string>
+    <string name="name">Enter your name</string>
+    <string name="scores">SCORES</string>
+    <string name="tictactoe">TIC TAC TOE</string>
+    <string name="hangman">HANGMAN</string>
+    <string name="minesweeper">MINESWEEPER</string>
+    <string name="empty">The score list is empty</string>
+    <string name="name1">Laure Daumal</string>
+    <string name="name2">Hourey Halilou</string>
+    <string name="name3">Jérémy Mikart</string>
+    <string name="made">An application by :</string>
+    <string name="madeat">Made at</string>
+    <string name="flag">Flag left : </string>
+    <string name="left"> 0</string>
+    <string name="reset">RESET</string>
+</resources>
