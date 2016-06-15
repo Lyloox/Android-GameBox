@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="50dp"
+        android:textColor="#FF0000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_name"
+        android:layout_below="@id/title_game"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"/>
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/player_name"
+        android:layout_alignBaseline="@id/player_name"
+        android:hint="@string/name"
+        android:layout_marginLeft="10dp"
+        android:singleLine="true"/>
+
+    <ImageButton
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:src="@drawable/ic_save"
+        android:background="@android:color/transparent"
+        android:layout_alignTop="@+id/player_name"
+        android:layout_toRightOf="@+id/edit"
+        android:layout_toEndOf="@+id/edit" />
+
+
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/player_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/scores"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:text="@string/scores"
+            android:layout_weight="1"
+            android:layout_marginRight="30dp"
+            android:enabled="false" />
+
+        <Button
+            android:id="@+id/tic"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:text="@string/tictactoe"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/first"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/hang"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:text="@string/hangman"
+            android:layout_weight="1"
+            android:layout_marginRight="30dp"
+            android:enabled="false"/>
+
+        <Button
+            android:id="@+id/mines"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:text="@string/minesweeper"
+            android:layout_weight="1"
+            android:enabled="false"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
