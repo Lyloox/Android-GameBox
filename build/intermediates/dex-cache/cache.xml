@@ -1,2 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_662ecb9bc8ce3e26a40a480e2b8f3951dfdbc6f6/classes.dex" />
+    </item>
+    <item
+        jar="/root/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.3.0_b975d86e0abec7206d5cce18f9d4cf511f96b32d/classes.dex" />
+    </item>
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_d207b047ee687fabe1c14a95cfcad36b3ac32ba0/classes.dex" />
+    </item>
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_2b74b543fad74c21886863debbffd5b7dd983a3a/classes.dex" />
+    </item>
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a3826644f9eee633b63ac36e899e90c2ae779136">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_357521688c926d04ed3d3894326fb523c53be8dd/classes.dex" />
+    </item>
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_916413edc1c5787116d962aa5de225b6c5292229/classes.dex" />
+    </item>
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d326c7cd8ec2cf6bfff44ba9c9ce2163b32e8666">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e7df1a1e060fe0074868559f365973cf405bc8ba/classes.dex" />
+    </item>
+    <item
+        jar="/home/lyloox/Android-GameBox/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_fd10e5a6182e5eecc816c10f12b18f506057a2e8/classes.dex" />
+    </item>
+
+</items>
