@@ -12,12 +12,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements MenuFragment.menuAction, ScoreFragment.scoreAction,
-                                                                MinesweeperFragment.sendScore {
+public class MainActivity extends AppCompatActivity implements MenuFragment.menuAction,
+        ScoreFragment.scoreAction, MinesweeperFragment.sendScore, HangmanFragment.sendScore {
 
     MenuFragment menuFragment;
     ScoreFragment scoreFragment;
-    String playerName = "";
+    static String playerName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,28 +90,11 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.menu
 
     @Override
     public void return_menu() {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_container, menuFragment);
         fragmentTransaction.commit();
 
-        EditText name = (EditText) findViewById(R.id.edit);
-        if (name != null)
-            playerName = name.getText().toString();
-        else
-            Toast.makeText(this, "Name == null", Toast.LENGTH_SHORT).show();
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            if (name != null && !Objects.equals(playerName, "")) {
-                name.setText(playerName);
-                menuFragment.hang.setEnabled(true);
-                menuFragment.mines.setEnabled(true);
-                menuFragment.scores.setEnabled(true);
-                menuFragment.tic.setEnabled(true);
-            } else
-                Toast.makeText(this, "playerName == null", Toast.LENGTH_SHORT).show();
-        }
 
     }
 
@@ -137,5 +120,27 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.menu
         bundle.putString("game", game);
         bundle.putBoolean("win", false);
         scoreFragment.setArguments(bundle);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        EditText name = (EditText) findViewById(R.id.edit);
+        if (name != null)
+            playerName = name.getText().toString();
+        else
+            Toast.makeText(this, "Name == null", Toast.LENGTH_SHORT).show();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (!Objects.equals(playerName, "")) {
+                name.setText(playerName);
+                menuFragment.hang.setEnabled(true);
+                menuFragment.mines.setEnabled(true);
+                menuFragment.scores.setEnabled(true);
+                menuFragment.tic.setEnabled(true);
+            } else
+                Toast.makeText(this, "playerName == null", Toast.LENGTH_SHORT).show();
+        }
     }
 }
