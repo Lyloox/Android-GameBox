@@ -214,22 +214,47 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">The Game Box</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
     <string name="empty">The score list is empty</string>
+    <string name="f">F</string>
     <string name="flag">Flag left : </string>
+    <string name="g">G</string>
+    <string name="h">H</string>
     <string name="hangman">HANGMAN</string>
+    <string name="i">I</string>
+    <string name="j">J</string>
+    <string name="k">K</string>
+    <string name="l">L</string>
     <string name="left"> 0</string>
+    <string name="letterA">A</string>
+    <string name="m">M</string>
     <string name="made">An application by :</string>
     <string name="madeat">Made at</string>
     <string name="minesweeper">MINESWEEPER</string>
+    <string name="n">N</string>
     <string name="name">Enter your name</string>
     <string name="name1">Laure Daumal</string>
     <string name="name2">Hourey Halilou</string>
     <string name="name3">Jérémy Mikart</string>
+    <string name="o">O</string>
+    <string name="p">P</string>
     <string name="player_name">Player name : </string>
+    <string name="q">Q</string>
+    <string name="r">R</string>
     <string name="reset">RESET</string>
+    <string name="s">S</string>
     <string name="scores">SCORES</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="t">T</string>
     <string name="tictactoe">TIC TAC TOE</string>
+    <string name="u">U</string>
+    <string name="v">V</string>
+    <string name="w">W</string>
+    <string name="y">Y</string>
+    <string name="z">Z</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

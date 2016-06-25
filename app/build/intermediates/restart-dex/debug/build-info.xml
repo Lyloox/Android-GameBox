@@ -4,20 +4,20 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="4473822576678" >
+    timestamp="15812809283818" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="598" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="226" />
     <task
         name="verifier"
-        duration="0" />
+        duration="11" />
 
     <artifact
         location="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
@@ -28,7 +28,17 @@
             location="/home/lyloox/Android-GameBox/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="4473822576678" >
+    <build
+        timestamp="15798794983478"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/home/lyloox/Android-GameBox/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="15812809283818" >
         <artifact
             location="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
