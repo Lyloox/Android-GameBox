@@ -226,11 +226,7 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
             for (int k = 0; k < alphalen; ++k)
                     if (v == alphabet[k]) {
                         char letter = alphabet[k].getText().charAt(0);
-                        Toast.makeText(getContext(), "letter " + letter + " choosen",
-                            Toast.LENGTH_SHORT).show();
-
                         lookup(letter);
-
                         alphabet[k].setEnabled(false);
                     }
     }
@@ -244,7 +240,6 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
     public interface hangmanAction {
         void return_menu();
     }
-
 
     public interface sendScore {
         void sendWin(String game);
