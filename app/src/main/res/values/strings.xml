@@ -15,6 +15,7 @@
     <string name="flag">Flag left : </string>
     <string name="left"> 0</string>
     <string name="reset">RESET</string>
+
     <string name="letterA">A</string>
     <string name="b">B</string>
     <string name="c">C</string>
@@ -42,4 +43,6 @@
     <string name="z">Z</string>
     <string name="empty_word">_ _ _ _ _ _ _</string>
     <string name="start">Start</string>
+    <string name="fails">Guesses remaining: </string>
+    <string name="retry">Retry</string>
 </resources>

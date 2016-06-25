@@ -11,6 +11,6 @@
         android:textSize="50dp"
         android:textColor="#FF0000"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

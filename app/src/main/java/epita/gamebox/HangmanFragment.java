@@ -1,5 +1,6 @@
 package epita.gamebox;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,9 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
     Button resetHang;
 
     TextView wordDisplay;
+    TextView fails;
+    int nbGuesses = 0;
+
     char[] hiddenWord;
     char[] currentWord;
 
@@ -42,10 +46,12 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
         // Get buttons
         startHang = (Button) view.findViewById(R.id.hangStart);
         resetHang = (Button) view.findViewById(R.id.hangReset);
-        wordDisplay = (TextView) view.findViewById(R.id.WordDisplayed);
-
         startHang.setOnClickListener(this);
         resetHang.setOnClickListener(this);
+
+        // Get textview
+        wordDisplay = (TextView) view.findViewById(R.id.WordDisplayed);
+        fails = (TextView) view.findViewById(R.id.nbFails);
 
         // Get grid
         GridLayout grid = (GridLayout) view.findViewById(R.id.LetterGrid);
@@ -78,7 +84,7 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
     }
 
     public void startGame() {
-        // Buttons logic
+        // Game logic
         for (int k = 0; k < alphalen; ++k)
                 alphabet[k].setEnabled(true);
         resetHang.setEnabled(true);
@@ -86,6 +92,11 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
 
         // Pick a word
         hiddenWord = randomWord();
+
+        nbGuesses = hiddenWord.length;
+        fails.setTextColor(Color.GREEN);
+        fails.setText(String.format("%d", nbGuesses));
+
         currentWord = new char[hiddenWord.length];
         for (int i = 0; i < hiddenWord.length; ++i)
             currentWord[i] = '_';
@@ -93,15 +104,39 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
         Toast.makeText(getContext(), "Game started. Good luck !", Toast.LENGTH_SHORT).show();
     }
 
-    public boolean lookup(char letter) {
+    public void incFails() {
+        nbGuesses--;
+        if (nbGuesses == 0)
+            Toast.makeText(getContext(), "YOU LOOSE", Toast.LENGTH_SHORT).show();
+        else {
+            if (nbGuesses <= 3)
+                fails.setTextColor(Color.RED);
+            else if (nbGuesses <= 5)
+                fails.setTextColor(Color.BLACK);
+            fails.setText(String.format("%d", nbGuesses));
+        }
+    }
+
+    public boolean isWon() {
+        for (int i = 0; i < currentWord.length; ++i)
+            if (currentWord[i] == '_')
+                return false;
+        return true;
+    }
+
+    public void lookup(char letter) {
         boolean found = false;
         for (int i = 0; i < hiddenWord.length; ++i)
             if (hiddenWord[i] == letter) {
                 currentWord[i] = letter;
                 found = true;
             }
+
         wordDisplay.setText(Arrays.toString(currentWord));
-        return found;
+        if (!found)
+            incFails();
+        else if (isWon())
+            Toast.makeText(getContext(), "YOU WON", Toast.LENGTH_SHORT).show();
     }
 
     @Override
