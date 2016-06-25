@@ -1,5 +1,6 @@
 package epita.gamebox;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,13 +10,14 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements MenuFragment.menuAction, ScoreFragment.scoreAction,
                                                                 MinesweeperFragment.sendScore {
 
     MenuFragment menuFragment;
     ScoreFragment scoreFragment;
-    String str = "";
+    String playerName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,10 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.menu
     public void save() {
         Toast toast = null;
         EditText name = (EditText) findViewById(R.id.edit);
-        str = name.getText().toString();
-        if (str.length() < 1)
+        if (name != null)
+            playerName = name.getText().toString();
+
+        if (playerName == null || playerName.length() < 1)
             toast = Toast.makeText(this, "Please enter a name", Toast.LENGTH_SHORT);
         else {
             toast = Toast.makeText(this, "Your name is saved", Toast.LENGTH_SHORT);
@@ -86,10 +90,29 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.menu
 
     @Override
     public void return_menu() {
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_container, menuFragment);
         fragmentTransaction.commit();
+
+        EditText name = (EditText) findViewById(R.id.edit);
+        if (name != null)
+            playerName = name.getText().toString();
+        else
+            Toast.makeText(this, "Name == null", Toast.LENGTH_SHORT).show();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            if (name != null && !Objects.equals(playerName, "")) {
+                name.setText(playerName);
+                menuFragment.hang.setEnabled(true);
+                menuFragment.mines.setEnabled(true);
+                menuFragment.scores.setEnabled(true);
+                menuFragment.tic.setEnabled(true);
+            } else
+                Toast.makeText(this, "playerName == null", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
@@ -98,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.menu
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM\nHH:mm");
         String currentDateandTime = sdf.format(Calendar.getInstance().getTime());
         bundle.putString("datetime", currentDateandTime);
-        bundle.putString("player", str);
+        bundle.putString("player", playerName);
         bundle.putString("game", game);
         bundle.putBoolean("win", true);
         scoreFragment.setArguments(bundle);
@@ -110,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.menu
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM\nHH:mm:ss");
         String currentDateandTime = sdf.format(Calendar.getInstance().getTime());
         bundle.putString("datetime", currentDateandTime);
-        bundle.putString("player", str);
+        bundle.putString("player", playerName);
         bundle.putString("game", game);
         bundle.putBoolean("win", false);
         scoreFragment.setArguments(bundle);

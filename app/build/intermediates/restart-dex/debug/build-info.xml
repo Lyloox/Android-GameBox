@@ -2,31 +2,36 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="23"
-    density="xxxhdpi"
+    density="xxhdpi"
     format="7"
-    timestamp="72761397702878" >
+    timestamp="4473822576678" >
 
     <task
         name="javac"
-        duration="1053" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="486" />
+        duration="0" />
     <task
         name="verifier"
-        duration="201" />
+        duration="0" />
 
     <artifact
-        location="C:\AndroidStudioProjects\Android-GameBox\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+        type="DEX" />
 
-    <build timestamp="72761397702878" >
+    <build timestamp="2117481150319" >
         <artifact
-            location="C:\AndroidStudioProjects\Android-GameBox\app\build\outputs\apk\app-debug.apk"
+            location="/home/lyloox/Android-GameBox/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build timestamp="4473822576678" >
+        <artifact
+            location="/home/lyloox/Android-GameBox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
