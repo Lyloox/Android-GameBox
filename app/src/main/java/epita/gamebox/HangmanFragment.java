@@ -11,14 +11,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Arrays;
 
 /**
  * Created by Jérémy on 11/06/2016.
  */
 public class HangmanFragment extends Fragment implements View.OnClickListener {
 
-    private Button[][] alphabet;
+    private Button[] alphabet;
+    int alphalen;
+
+    Button startHang;
+    Button resetHang;
+
+    TextView wordDisplay;
+    char[] hiddenWord;
+    char[] currentWord;
 
     public HangmanFragment() {}
 
@@ -28,19 +39,21 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
         setHasOptionsMenu(true);
         final View view = inflater.inflate(R.layout.hangmanfragment, container, false);
 
-        // Get elements
+        // Get buttons
+        startHang = (Button) view.findViewById(R.id.hangStart);
+        resetHang = (Button) view.findViewById(R.id.hangReset);
+        wordDisplay = (TextView) view.findViewById(R.id.WordDisplayed);
+
+        startHang.setOnClickListener(this);
+        resetHang.setOnClickListener(this);
+
+        // Get grid
         GridLayout grid = (GridLayout) view.findViewById(R.id.LetterGrid);
-        alphabet = new Button[5][5];
-        int i = 0;
-        int j = 0;
-        for (int k = 0; k < grid.getChildCount(); ++k){
-            if (k % 5 == 0 && k != 0) {
-                ++i;
-                j = 0;
-            }
-            alphabet[i][j] = (Button) grid.getChildAt(k);
-            alphabet[i][j].setOnClickListener(this);
-            ++j;
+        alphalen = grid.getChildCount();
+        alphabet = new Button[alphalen];
+        for (int k = 0; k < alphalen; ++k){
+            alphabet[k] = (Button) grid.getChildAt(k);
+            alphabet[k].setOnClickListener(this);
         }
 
         return view;
@@ -64,15 +77,57 @@ public class HangmanFragment extends Fragment implements View.OnClickListener {
         return true;
     }
 
+    public void startGame() {
+        // Buttons logic
+        for (int k = 0; k < alphalen; ++k)
+                alphabet[k].setEnabled(true);
+        resetHang.setEnabled(true);
+        startHang.setEnabled(false);
+
+        // Pick a word
+        hiddenWord = randomWord();
+        currentWord = new char[hiddenWord.length];
+        for (int i = 0; i < hiddenWord.length; ++i)
+            currentWord[i] = '_';
+        wordDisplay.setText(Arrays.toString(currentWord));
+        Toast.makeText(getContext(), "Game started. Good luck !", Toast.LENGTH_SHORT).show();
+    }
+
+    public boolean lookup(char letter) {
+        boolean found = false;
+        for (int i = 0; i < hiddenWord.length; ++i)
+            if (hiddenWord[i] == letter) {
+                currentWord[i] = letter;
+                found = true;
+            }
+        wordDisplay.setText(Arrays.toString(currentWord));
+        return found;
+    }
+
     @Override
     public void onClick(View v) {
-        for (int i = 0; i < 5; ++i)
-            for (int j = 0; j < 5; ++j)
-                if (v == alphabet[i][j]) {
-                    Toast.makeText(getContext(), "letter " + alphabet[i][j].getText() + " choosen",
+        if (v == startHang) {
+            startGame();
+        }
+        else if (v == resetHang) {
+            Toast.makeText(getContext(), "Resetting...", Toast.LENGTH_SHORT).show();
+            startGame();
+        }
+        else
+            for (int k = 0; k < alphalen; ++k)
+                    if (v == alphabet[k]) {
+                        char letter = alphabet[k].getText().charAt(0);
+                        Toast.makeText(getContext(), "letter " + letter + " choosen",
                             Toast.LENGTH_SHORT).show();
-                    alphabet[i][j].setEnabled(false);
-                }
+
+                        lookup(letter);
+
+                        alphabet[k].setEnabled(false);
+                    }
+    }
+
+    public char[] randomWord() {
+        return "ETOILE".toCharArray();
     }
 
     public interface hangmanAction {
