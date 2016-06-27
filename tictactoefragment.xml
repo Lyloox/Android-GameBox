@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tictactoe"
+        android:textSize="50dp"
+        android:textColor="#FF0000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player"
+        android:layout_below="@+id/title_game"
+        android:layout_alignLeft="@+id/title_game" />
+
+    <GridLayout
+        android:id="@+id/gridGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:layout_below="@+id/player"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp">
+
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="@string/emptyButton" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/playerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playerName"
+        android:layout_above="@id/gridGame"
+        android:layout_toRightOf="@id/player"
+        android:layout_marginLeft="10dp"/>
+
+    <Button
+        android:id="@+id/resetTTT"
+        android:layout_below="@+id/gridGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resetTTT"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>
